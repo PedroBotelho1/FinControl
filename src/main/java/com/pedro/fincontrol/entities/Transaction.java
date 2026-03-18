@@ -10,6 +10,7 @@ import java.time.Instant;
 import java.util.Objects;
 
 @Entity
+@Table(name = "tb_transaction")
 public class Transaction implements Serializable {
     private static final long serialVersionUID = 1L;
 
