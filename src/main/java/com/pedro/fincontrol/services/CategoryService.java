@@ -18,10 +18,13 @@ public class CategoryService {
         return repository.findAll();
     }
 
-
     public Category findById(Long id) {
         Optional<Category> obj = repository.findById(id);
         return obj.orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+    }
+
+    public Category insert(Category obj) {
+        return repository.save(obj);
     }
 
 }

@@ -78,7 +78,7 @@ public class TestConfig implements CommandLineRunner {
 
         Transaction t5 = new Transaction(null, "Parcela 1 Seguro", 150.0, Instant.parse("2026-03-20T10:00:00Z"), Instant.parse("2026-03-20T10:00:00Z"), u1, cat3);
         t5.setType(TransactionType.EXPENSE);
-        t5.setStatus(TransactionStatus.PAID);
+        t5.setStatus(TransactionStatus.PENDING);
 
         t5.setRecurringBill(rb1);
 

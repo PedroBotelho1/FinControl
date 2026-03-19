@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/recurringbill")
+@CrossOrigin("*")
 public class RecurringBillResource {
 
     @Autowired
