@@ -1,11 +1,13 @@
 package com.pedro.fincontrol.config;
 
 import com.pedro.fincontrol.entities.Category;
+import com.pedro.fincontrol.entities.RecurringBill;
 import com.pedro.fincontrol.entities.Transaction;
 import com.pedro.fincontrol.entities.User;
 import com.pedro.fincontrol.entities.enums.TransactionStatus;
 import com.pedro.fincontrol.entities.enums.TransactionType;
 import com.pedro.fincontrol.repositories.CategoryRepository;
+import com.pedro.fincontrol.repositories.RecurringBillRepository;
 import com.pedro.fincontrol.repositories.TransactionRepository;
 import com.pedro.fincontrol.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,9 @@ public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private TransactionRepository transactionRepository;
+
+    @Autowired
+    private RecurringBillRepository recurringBillRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -65,5 +70,18 @@ public class TestConfig implements CommandLineRunner {
 
         // Salva as transações
         transactionRepository.saveAll(Arrays.asList(t1, t2, t3, t4));
+
+
+        RecurringBill rb1 = new RecurringBill(null, "Seguro do Carro", 12, 1, 150.0, Instant.parse("2026-03-20T10:00:00Z"), u1);
+
+        recurringBillRepository.saveAll(Arrays.asList(rb1));
+
+        Transaction t5 = new Transaction(null, "Parcela 1 Seguro", 150.0, Instant.parse("2026-03-20T10:00:00Z"), Instant.parse("2026-03-20T10:00:00Z"), u1, cat3);
+        t5.setType(TransactionType.EXPENSE);
+        t5.setStatus(TransactionStatus.PAID);
+
+        t5.setRecurringBill(rb1);
+
+        transactionRepository.saveAll(Arrays.asList(t1, t2, t3, t4, t5));
     }
 }

@@ -1,4 +1,4 @@
-package com.pedro.fincontrol.service;
+package com.pedro.fincontrol.services;
 
 import com.pedro.fincontrol.entities.Category;
 import com.pedro.fincontrol.repositories.CategoryRepository;

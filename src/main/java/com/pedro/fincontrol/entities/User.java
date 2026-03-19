@@ -25,6 +25,10 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     private List<Transaction> transactions =  new ArrayList<>();
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<RecurringBill> recurringBills = new ArrayList<>();
+
     public User() {
     }
 
@@ -69,6 +73,10 @@ public class User implements Serializable {
 
     public List<Transaction> getTransactions() {
         return transactions;
+    }
+
+    public List<RecurringBill> getRecurringBills() {
+        return recurringBills;
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.pedro.fincontrol.resources;
 
 import com.pedro.fincontrol.entities.Category;
-import com.pedro.fincontrol.service.CategoryService;
+import com.pedro.fincontrol.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

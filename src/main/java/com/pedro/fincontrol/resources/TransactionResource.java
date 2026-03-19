@@ -1,7 +1,7 @@
 package com.pedro.fincontrol.resources;
 
 import com.pedro.fincontrol.entities.Transaction;
-import com.pedro.fincontrol.service.TransactionService;
+import com.pedro.fincontrol.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,9 +1,9 @@
-package com.pedro.fincontrol.service;
+package com.pedro.fincontrol.services;
 
 import com.pedro.fincontrol.entities.Transaction;
 import com.pedro.fincontrol.repositories.TransactionRepository;
-import com.pedro.fincontrol.service.exceptions.DatabaseException;
-import com.pedro.fincontrol.service.exceptions.ResourceNotFoundException;
+import com.pedro.fincontrol.services.exceptions.DatabaseException;
+import com.pedro.fincontrol.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;

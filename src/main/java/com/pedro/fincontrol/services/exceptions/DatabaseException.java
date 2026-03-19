@@ -1,4 +1,4 @@
-package com.pedro.fincontrol.service.exceptions;
+package com.pedro.fincontrol.services.exceptions;
 
 public class DatabaseException extends RuntimeException{
 

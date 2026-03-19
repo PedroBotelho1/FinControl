@@ -43,6 +43,10 @@ public class Transaction implements Serializable {
     @JoinColumn(name = "category_id")
     private Category category;
 
+    @ManyToOne
+    @JoinColumn(name = "recurring_bill_id")
+    private RecurringBill recurringBill;
+
     public Transaction() {
     }
 
@@ -126,6 +130,15 @@ public class Transaction implements Serializable {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    // 3. Para a Conta Recorrente (RecurringBill)
+    public RecurringBill getRecurringBill() {
+        return recurringBill;
+    }
+
+    public void setRecurringBill(RecurringBill recurringBill) {
+        this.recurringBill = recurringBill;
     }
 
     @Override
